@@ -48,15 +48,17 @@
     }
 
     .nav-logo {
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: var(--text);
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      text-transform: uppercase;
     }
 
-    .nav-logo span { color: var(--orange); }
+    .nav-logo img {
+      height: 28px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.92;
+    }
 
     .nav-links {
       display: flex;
@@ -95,8 +97,39 @@
       top: -200px; left: 50%;
       transform: translateX(-50%);
       width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(45,106,79,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(45,106,79,0.18) 0%, transparent 70%);
       pointer-events: none;
+    }
+
+    /* Topo SVG decorative layer */
+    .hero-topo {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    /* Logo block in hero */
+    .hero-brand {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-logo {
+      height: 52px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.38);
     }
 
     .hero-eyebrow {
@@ -342,15 +375,12 @@
       gap: 16px;
     }
 
-    .footer-logo {
-      font-size: 14px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
+    .footer-logo img {
+      height: 22px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.35;
     }
-
-    .footer-logo span { color: var(--orange); }
 
     .footer-links {
       display: flex;
@@ -383,7 +413,7 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-logo">Roam<span>Trip</span></a>
+    <a href="/" class="nav-logo"><img src="logo.png" alt="RoamTrip" /></a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -393,6 +423,44 @@
 
   <!-- HERO -->
   <section class="hero">
+
+    <!-- Topo trail map (mirrors the login screen background) -->
+    <svg class="hero-topo" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- Contour rings — upper-left cluster -->
+      <path d="M 280 340 C 330 315 385 328 405 368 C 424 406 408 455 375 472 C 338 490 280 476 256 440 C 232 404 232 368 280 340 Z" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+      <path d="M 276 280 C 355 246 448 264 476 322 C 502 378 480 450 420 480 C 356 512 270 496 220 450 C 170 404 170 325 276 280 Z" fill="none" stroke="rgba(255,255,255,0.055)" stroke-width="1"/>
+      <path d="M 272 210 C 385 166 510 188 548 262 C 584 334 560 428 488 468 C 408 510 290 498 216 444 C 132 388 128 270 272 210 Z" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+      <path d="M 268 134 C 420 76 578 106 624 198 C 668 288 640 406 552 456 C 456 508 308 500 214 436 C 94 364 88 218 268 134 Z" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      <!-- Second contour cluster — right side -->
+      <path d="M 1060 180 C 1110 158 1165 168 1182 200 C 1198 232 1186 268 1156 280 C 1122 294 1072 280 1054 252 C 1036 224 1036 204 1060 180 Z" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <path d="M 1055 138 C 1128 108 1212 124 1235 170 C 1256 214 1238 272 1188 294 C 1134 316 1058 300 1022 260 C 984 218 984 172 1055 138 Z" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+      <!-- Dashed trail — left cluster winding down -->
+      <path d="M 320 80 C 308 130 318 180 330 220 C 345 268 340 305 322 340 C 304 375 278 392 272 428 C 266 462 280 490 295 520 C 315 558 340 590 360 640 C 382 695 385 750 380 820"
+        fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-dasharray="7 5" stroke-linecap="round"/>
+      <!-- Dashed trail — right cluster -->
+      <path d="M 1100 60 C 1088 100 1095 140 1108 168 C 1122 198 1120 225 1108 250 C 1096 274 1075 285 1068 308 C 1060 332 1072 355 1090 380 C 1112 412 1140 438 1160 475"
+        fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.5" stroke-dasharray="7 5" stroke-linecap="round"/>
+      <!-- Waypoint markers -->
+      <circle cx="330" cy="220" r="5" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+      <circle cx="330" cy="220" r="2" fill="rgba(255,255,255,0.18)"/>
+      <circle cx="322" cy="340" r="5" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="1.5"/>
+      <circle cx="322" cy="340" r="2" fill="rgba(255,255,255,0.16)"/>
+      <circle cx="295" cy="520" r="5" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5"/>
+      <circle cx="295" cy="520" r="2" fill="rgba(255,255,255,0.14)"/>
+      <circle cx="1108" cy="168" r="4" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+      <circle cx="1108" cy="168" r="1.8" fill="rgba(255,255,255,0.12)"/>
+      <!-- Summit crosshairs -->
+      <circle cx="335" cy="385" r="7" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+      <line x1="329" y1="385" x2="341" y2="385" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <line x1="335" y1="379" x2="335" y2="391" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    </svg>
+
+    <!-- Brand block -->
+    <div class="hero-brand">
+      <img src="logo.png" alt="RoamTrip" class="hero-logo" />
+      <p class="hero-tagline">Your world. Your route. Your record.</p>
+    </div>
+
     <p class="hero-eyebrow">Travel Intelligence App</p>
     <h1>Your world.<br /><em>Your route.</em></h1>
     <p class="hero-sub">
@@ -495,7 +563,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-logo">Roam<span>Trip</span></span>
+    <span class="footer-logo"><img src="logo.png" alt="RoamTrip" /></span>
     <ul class="footer-links">
       <li><a href="/privacy.html">Privacy Policy</a></li>
       <li><a href="#contact">Contact</a></li>
