@@ -169,7 +169,7 @@
 
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective date: 26 May 2026 &nbsp;·&nbsp; Last updated: 26 May 2026</p>
+    <p class="effective-date">Effective date: 26 May 2026 &nbsp;·&nbsp; Last updated: 27 May 2026</p>
 
     <p>RoamTrip ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it when you use the RoamTrip mobile application ("the App").</p>
 
@@ -188,7 +188,7 @@
     With your permission, the App accesses your camera and photo library for VibeFrame photo capture and to attach photos to trips and journal entries. Photos are stored in your account and are not used for any other purpose.</p>
 
     <p><strong style="color: var(--text);">Documents</strong><br />
-    Documents you store in the RoamTrip Vault (passports, visas, insurance) are encrypted on your device and stored securely in your account. These documents are never shared or used for any purpose other than displaying them to you within the App.</p>
+    Documents you store in the RoamTrip Vault (passports, visas, insurance) are encrypted at rest and stored securely in your account. Access is protected by device biometric authentication (Face ID or fingerprint) or a PIN you set. We do not store, process, or have access to your biometric data — authentication is handled entirely by your device's operating system. Vault documents are never shared or used for any purpose other than displaying them to you within the App.</p>
 
     <p><strong style="color: var(--text);">Financial Data</strong><br />
     Expense records you enter into the spend tracker are stored in your account. We do not collect, access, or store any banking or payment card information.</p>
@@ -198,6 +198,9 @@
 
     <p><strong style="color: var(--text);">Push Notification Tokens</strong><br />
     If you opt in to notifications, we store a push notification token associated with your account to deliver alerts (safety, flight, weather, events).</p>
+
+    <p><strong style="color: var(--text);">AI Feature Context</strong><br />
+    When you use AI-powered features (RT-Smart morning briefing, Photo Scout composition analysis, or intelligence insights), limited contextual data is sent to generate a response. This may include your approximate location or destination name, current time of day, weather conditions, sun position, and nearby points of interest. This data is used solely to generate the relevant output and is not stored, used for training, or linked to your identity by the AI provider.</p>
 
     <h2>2. How We Use Your Information</h2>
 
@@ -219,13 +222,15 @@
 
     <ul>
       <li><strong style="color: var(--text);">Supabase</strong> — Secure cloud database and authentication. Your account data and trip information is stored on Supabase infrastructure.</li>
-      <li><strong style="color: var(--text);">Google Maps &amp; Google Places</strong> — Mapping, route display, and location search.</li>
-      <li><strong style="color: var(--text);">HERE Technologies</strong> — Points of interest data.</li>
+      <li><strong style="color: var(--text);">Anthropic (Claude AI)</strong> — Powers AI features including the RT-Smart morning briefing, Photo Scout, and intelligence insights. Anonymised contextual data (location name, time, weather, light conditions) is sent to generate responses. Anthropic does not use this data to train its models. See <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic's Privacy Policy</a>.</li>
+      <li><strong style="color: var(--text);">Google Maps</strong> — Mapping, route display, and location search on Android.</li>
+      <li><strong style="color: var(--text);">HERE Technologies</strong> — Points of interest discovery and location search.</li>
       <li><strong style="color: var(--text);">AeroDataBox</strong> — Live flight status and schedule data.</li>
       <li><strong style="color: var(--text);">OpenWeatherMap</strong> — Weather intelligence and forecast data.</li>
       <li><strong style="color: var(--text);">Unsplash</strong> — Destination photography used for trip visuals.</li>
       <li><strong style="color: var(--text);">Firebase (Google)</strong> — Push notification delivery.</li>
-      <li><strong style="color: var(--text);">RevenueCat</strong> — In-app subscription management. RevenueCat may collect purchase history in accordance with their privacy policy.</li>
+      <li><strong style="color: var(--text);">RevenueCat</strong> — In-app subscription management and purchase verification. RevenueCat processes payment transactions on our behalf; we receive only your subscription status (active/inactive) and do not see or store payment card details. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</li>
+      <li><strong style="color: var(--text);">Apple App Store / Google Play</strong> — In-app purchases are processed by Apple or Google depending on your device. Their privacy policies apply to payment processing.</li>
       <li><strong style="color: var(--text);">MapTiler</strong> — Satellite and terrain map tiles.</li>
     </ul>
 
@@ -254,22 +259,36 @@
     <ul>
       <li>Access the personal data we hold about you</li>
       <li>Request correction of inaccurate data</li>
-      <li>Request deletion of your account and associated data</li>
+      <li>Request deletion of your account and all associated data</li>
       <li>Object to or restrict certain uses of your data</li>
       <li>Data portability (receive a copy of your data in a common format)</li>
     </ul>
 
-    <p>To exercise any of these rights, please contact us at <a href="mailto:support@roamtrip.mobile">support@roamtrip.mobile</a>.</p>
+    <p><strong style="color: var(--text);">Account Deletion</strong><br />
+    You can delete your account directly within the App at any time: go to <strong>Profile → Delete Account</strong>. Deleting your account permanently removes your personal data, trip history, journal entries, vault documents, and all associated content from our systems within 30 days. This action is irreversible. Alternatively, you may request account deletion by contacting us at <a href="mailto:support@roamtrip.mobile">support@roamtrip.mobile</a>.</p>
 
-    <h2>8. Cookies and Tracking</h2>
+    <h2>8. Google Play Data Safety Summary</h2>
 
-    <p>The RoamTrip mobile app does not use cookies. We may use anonymised, aggregated analytics to understand how the App is used, but this data cannot be used to identify you individually.</p>
+    <p>The following summary is provided for Google Play Store compliance. Full details are in the sections above.</p>
 
-    <h2>9. Changes to This Policy</h2>
+    <ul>
+      <li><strong style="color: var(--text);">Data collected:</strong> Email address, name (optional), location (while in use), photos (with permission), trip/itinerary data, expense records, push notification token, device/app version.</li>
+      <li><strong style="color: var(--text);">Data shared with third parties:</strong> Anonymised location context shared with Anthropic for AI features. Subscription status shared with RevenueCat. Map and location queries sent to Google Maps and HERE. Push tokens delivered via Firebase.</li>
+      <li><strong style="color: var(--text);">Data encryption:</strong> All data is encrypted in transit (HTTPS/TLS). Vault documents are encrypted at rest.</li>
+      <li><strong style="color: var(--text);">Data deletion:</strong> Users can request deletion of all data via in-app account deletion or by contacting support.</li>
+      <li><strong style="color: var(--text);">Location:</strong> Approximate location used while app is in use only. Not collected in the background.</li>
+      <li><strong style="color: var(--text);">No advertising:</strong> We do not use Advertising IDs, track users across apps, or share data for advertising purposes.</li>
+    </ul>
+
+    <h2>9. Cookies and Tracking</h2>
+
+    <p>The RoamTrip mobile app does not use cookies. We may use anonymised, aggregated analytics to understand how the App is used, but this data cannot be used to identify you individually. We do not use advertising identifiers or cross-app tracking.</p>
+
+    <h2>10. Changes to This Policy</h2>
 
     <p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you via the App or by email before the changes take effect. The effective date at the top of this page will always reflect the latest revision.</p>
 
-    <h2>10. Contact Us</h2>
+    <h2>11. Contact Us</h2>
 
     <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us:</p>
 
