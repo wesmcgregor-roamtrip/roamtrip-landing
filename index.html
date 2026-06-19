@@ -78,6 +78,28 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .nav-scout {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      border: 1px solid rgba(224,123,57,0.4);
+      border-radius: 4px;
+      color: var(--orange);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-scout:hover {
+      background: rgba(224,123,57,0.1);
+      border-color: var(--orange);
+    }
+
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -419,6 +441,9 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="/privacy.html">Privacy</a></li>
     </ul>
+    <a href="https://scout.roamtrip.mobile" class="nav-scout" target="_blank" rel="noopener">
+      Sign in to RoamTrip Scout ↗
+    </a>
   </nav>
 
   <!-- HERO -->
@@ -481,8 +506,8 @@
   <!-- STAT BAR -->
   <div class="stat-bar">
     <div class="stat">
-      <div class="stat-value"><span>6</span></div>
-      <div class="stat-label">Intelligence Modules</div>
+      <div class="stat-value"><span>21</span></div>
+      <div class="stat-label">Languages (Phrases)</div>
     </div>
     <div class="stat">
       <div class="stat-value"><span>10</span>+</div>
@@ -509,43 +534,85 @@
       <div class="feature-card">
         <div class="feature-icon" style="background: rgba(45,106,79,0.2);">🌍</div>
         <h3>Trip Intelligence</h3>
-        <p>Safety scores updated in real time. Weather, air quality, civil unrest, and disaster alerts fused into a single 1–10 score for your destination. RT-Smart sends a morning briefing every day of your trip.</p>
+        <p>Government-sourced safety scores updated in real time. Weather, air quality, civil unrest, and disaster alerts fused into a single 1–10 risk index. RT-Smart sends a personalised morning briefing at 7am every day of your trip — including nearby events.</p>
         <span class="tag tag-green">Live Data</span>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background: rgba(59,130,246,0.15);">✈️</div>
         <h3>Flight Tracking</h3>
-        <p>Real-time flight status for every leg of your journey — outbound, return, and layovers. Departure and arrival updates pulled automatically from live aviation data.</p>
+        <p>Real-time flight status for every leg — outbound, return, and multi-stop. Gate, terminal, and boarding status pulled live. Multi-leg trip cards show all connected flights in a single timeline view.</p>
         <span class="tag tag-blue">Real-Time</span>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background: rgba(224,123,57,0.2);">📷</div>
-        <h3>VibeFrame</h3>
-        <p>Know the perfect moment to shoot. Moon phase, golden hour countdown, and blue hour windows for your exact location. Camera type and lens recommendations for the conditions.</p>
+        <h3>RT-Frame</h3>
+        <p>Know the perfect moment to shoot. Golden hour countdown, blue hour windows, moon phase, and astro conditions for your exact pin location. Equatorial arc overlay, light quality score, and camera recommendations tuned to your gear and shooting style.</p>
         <span class="tag tag-orange">Photographers</span>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background: rgba(139,92,246,0.15);">🔒</div>
         <h3>Document Vault</h3>
-        <p>Passports, visas, insurance docs — stored behind Face ID or fingerprint. AI-powered document extraction reads your documents on import. Auto-locks when you leave the app.</p>
+        <p>Passports, visas, insurance docs, and PDFs — stored behind Face ID or fingerprint. AI-powered extraction reads your document on import. Auto-locks the moment you leave the app.</p>
         <span class="tag tag-purple">Biometric</span>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background: rgba(45,106,79,0.2);">💱</div>
         <h3>Spend Tracking</h3>
-        <p>Log expenses in any currency. RoamTrip converts to your home currency automatically. Track by category across the whole trip and see exactly where your budget went.</p>
+        <p>Log expenses in any currency with live exchange rates built in. Set your home currency once and totals convert automatically. Full spend report by category for each trip.</p>
         <span class="tag tag-green">Multi-Currency</span>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon" style="background: rgba(59,130,246,0.15);">🗺️</div>
         <h3>Trip Hub</h3>
-        <p>Your full itinerary in one view. Flights, stays, events, and transport in a live timeline. Tap any card to pull real-time intelligence for that leg of the trip.</p>
+        <p>Your full itinerary in one view. Flights, stays, events, and transport in a scrollable day-by-day timeline. Swipe through days — past events fade automatically as your trip progresses.</p>
         <span class="tag tag-blue">Itinerary</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(224,123,57,0.15);">🔭</div>
+        <h3>RT-Explore</h3>
+        <p>Point your camera at any place and get instant context — restaurants, landmarks, and hidden spots pulled from real-time POI data. Tap a result to see Wikipedia detail, hours, and distance. Discover what's around you, not just what you planned.</p>
+        <span class="tag tag-orange">Discover</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(139,92,246,0.15);">📖</div>
+        <h3>Trip Journal</h3>
+        <p>Write daily notes and attach photos directly to any day of your trip. Photos added to the journal appear in your trip gallery automatically. Your memories, attached to the itinerary that created them.</p>
+        <span class="tag tag-purple">Memories</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(45,106,79,0.2);">🗃️</div>
+        <h3>Past Trip Archive</h3>
+        <p>Every completed trip becomes a permanent record — animated location trail map, day-by-day event sheet, and a full story view. Revisit where you went, what you did, and what you captured.</p>
+        <span class="tag tag-green">Archive</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(59,130,246,0.15);">💬</div>
+        <h3>Destination Phrases</h3>
+        <p>20 essential phrases in 21 languages for every destination. Tap any phrase to hear it spoken aloud — phonetic pronunciation included. No data connection needed once loaded.</p>
+        <span class="tag tag-blue">21 Languages</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(224,123,57,0.2);">✨</div>
+        <h3>Dream Trips</h3>
+        <p>Add destinations with no dates — your travel bucket list, inside your itinerary. RT-Smart can analyse and inspire your dreams. When you're ready to book, convert to a real trip in one tap.</p>
+        <span class="tag tag-orange">RT-Smart</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon" style="background: rgba(139,92,246,0.15);">👥</div>
+        <h3>Trip Collaboration</h3>
+        <p>Invite fellow travellers to your trip with a single code. Collaborators can view and edit the itinerary in real time. Owner controls stay separate — guests can contribute without changing what matters.</p>
+        <span class="tag tag-purple">Shared Trips</span>
       </div>
 
     </div>
@@ -567,6 +634,7 @@
     <ul class="footer-links">
       <li><a href="/privacy.html">Privacy Policy</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="https://scout.roamtrip.mobile" target="_blank" rel="noopener">RoamTrip Scout</a></li>
     </ul>
     <span class="footer-copy">&copy; 2026 RoamTrip. All rights reserved.</span>
   </footer>
