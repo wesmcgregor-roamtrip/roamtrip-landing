@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — RoamTrip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000814;
+      --surface: #0d1b2a;
+      --green: #2D6A4F;
+      --green-light: #40916C;
+      --orange: #E07B39;
+      --text: #F0F4F8;
+      --muted: #8A9BB0;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: rgba(0,8,20,0.9);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo img { height: 28px; display: block; }
+
+    .nav-home {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-home:hover { color: var(--text); }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(224,123,57,0.15);
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-num {
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .card code {
+      background: rgba(255,255,255,0.07);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 0 10px;
+    }
+
+    td {
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--muted);
+    }
+
+    td:first-child {
+      color: var(--text);
+      font-weight: 500;
+      padding-right: 24px;
+      width: 45%;
+    }
+
+    .deleted { color: #52b788; }
+    .retained { color: var(--orange); }
+
+    .email-link {
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .email-link:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo"><img src="logo.png" alt="RoamTrip" /></a>
+    <a href="/" class="nav-home">← Back to RoamTrip</a>
+  </nav>
+
+  <main>
+
+    <div class="badge">Account Deletion</div>
+    <h1>Delete your RoamTrip account</h1>
+    <p class="subtitle">You can request deletion of your RoamTrip account and all associated data at any time.</p>
+
+    <div class="card">
+      <h2><span class="step-num">1</span> Open the RoamTrip app</h2>
+      <p>Make sure you're signed in to the account you want to delete.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="step-num">2</span> Go to your Profile</h2>
+      <p>Tap the <code>Profile</code> tab in the bottom navigation bar.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="step-num">3</span> Open Settings</h2>
+      <p>Scroll to the bottom of your profile and tap <code>Settings</code>.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="step-num">4</span> Delete account</h2>
+      <p>Tap <code>Delete Account</code> and confirm. Your account and all associated data will be permanently deleted immediately.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>Can't access the app?</h3>
+    <div class="card">
+      <h2>Email us</h2>
+      <p>Send a deletion request from the email address associated with your account to <a class="email-link" href="mailto:info@roamtrip.mobile">info@roamtrip.mobile</a>. We will process your request within 30 days.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <h3>What happens to your data</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>On deletion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Profile (name, email, avatar)</td>
+          <td class="deleted">Permanently deleted immediately</td>
+        </tr>
+        <tr>
+          <td>Trips, events, itineraries</td>
+          <td class="deleted">Permanently deleted immediately</td>
+        </tr>
+        <tr>
+          <td>Journal entries</td>
+          <td class="deleted">Permanently deleted immediately</td>
+        </tr>
+        <tr>
+          <td>Photos and gallery</td>
+          <td class="deleted">Permanently deleted immediately</td>
+        </tr>
+        <tr>
+          <td>Trip Books (PDFs)</td>
+          <td class="deleted">Permanently deleted immediately</td>
+        </tr>
+        <tr>
+          <td>Vault data</td>
+          <td class="deleted">Permanently deleted immediately</td>
+        </tr>
+        <tr>
+          <td>Subscription records</td>
+          <td class="retained">Retained for up to 7 years as required by financial regulations</td>
+        </tr>
+        <tr>
+          <td>Anonymised usage logs</td>
+          <td class="retained">Retained for up to 90 days then permanently deleted</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 RoamTrip &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
