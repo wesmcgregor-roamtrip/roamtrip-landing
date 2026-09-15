@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <clipPath id="sq">
+      <rect width="1024" height="1024" rx="225"/>
+    </clipPath>
+    <clipPath id="pin">
+      <path d="M512 112 C394 112 298 208 298 326 C298 410 344 483 412 524 L512 664 L612 524 C680 483 726 410 726 326 C726 208 630 112 512 112 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background - near black -->
+  <rect width="1024" height="1024" rx="225" fill="#141414"/>
+
+  <g clip-path="url(#sq)">
+
+    <!-- White pin shape -->
+    <path d="M512 112 C394 112 298 208 298 326 C298 410 344 483 412 524 L512 664 L612 524 C680 483 726 410 726 326 C726 208 630 112 512 112 Z" fill="#ffffff"/>
+
+    <!-- Dark inner cutout -->
+    <path d="M512 148 C415 148 336 227 336 326 C336 399 378 463 438 497 L512 620 L586 497 C646 463 688 399 688 326 C688 227 609 148 512 148 Z" fill="#141414"/>
+
+    <g clip-path="url(#pin)">
+      <!-- Back left mountain - orange -->
+      <polygon points="298,664 368,326 438,664" fill="#c8531a"/>
+      <polygon points="368,326 350,374 386,374" fill="#ffffff"/>
+
+      <!-- Back right mountain - orange -->
+      <polygon points="586,664 656,326 726,664" fill="#c8531a"/>
+      <polygon points="656,326 638,374 674,374" fill="#ffffff"/>
+
+      <!-- Dark separator -->
+      <polygon points="444,664 512,400 580,664" fill="#141414"/>
+
+      <!-- Front centre mountain - white -->
+      <polygon points="390,664 512,210 634,664" fill="#ffffff"/>
+      <!-- Front peak cap - orange -->
+      <polygon points="512,210 486,278 538,278" fill="#c8531a"/>
+
+      <!-- Subtle road -->
+      <path d="M484,664 Q478,628 490,596 Q506,558 500,520 Q494,486 512,448"
+            fill="none" stroke="#c8531a" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
+    </g>
+
+    <!-- RoamTrip wordmark -->
+    <text x="512" y="870"
+          text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="112"
+          font-weight="700"
+          fill="#ffffff">RoamTrip</text>
+
+    <!-- Burnt orange rule -->
+    <rect x="180" y="888" width="664" height="8" rx="4" fill="#c8531a" opacity="0.7"/>
+
+  </g>
+</svg>
