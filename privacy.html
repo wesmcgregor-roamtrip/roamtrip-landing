@@ -194,7 +194,7 @@
     Expense records you enter into the spend tracker are stored in your account. We do not collect, access, or store any banking or payment card information.</p>
 
     <p><strong style="color: var(--text);">Device Information</strong><br />
-    We may collect basic device information (device type, operating system version, app version) for the purpose of crash reporting and improving app performance.</p>
+    We use Sentry for crash reporting, performance monitoring, and session replay to help us diagnose and fix issues. This includes basic device information (device type, operating system version, app version), your IP address, and — for a sample of sessions, and any session where a crash occurs — a recording of on-screen activity. See <a href="https://sentry.io/privacy/" target="_blank">Sentry's Privacy Policy</a>.</p>
 
     <p><strong style="color: var(--text);">Push Notification Tokens</strong><br />
     If you opt in to notifications, we store a push notification token associated with your account to deliver alerts (safety, flight, weather, events).</p>
@@ -226,12 +226,13 @@
       <li><strong style="color: var(--text);">Google Maps</strong> — Mapping, route display, and location search on Android.</li>
       <li><strong style="color: var(--text);">HERE Technologies</strong> — Points of interest discovery and location search.</li>
       <li><strong style="color: var(--text);">AeroDataBox</strong> — Live flight status and schedule data.</li>
-      <li><strong style="color: var(--text);">OpenWeatherMap</strong> — Weather intelligence and forecast data.</li>
+      <li><strong style="color: var(--text);">Open-Meteo</strong> — Weather intelligence and forecast data.</li>
       <li><strong style="color: var(--text);">Unsplash</strong> — Destination photography used for trip visuals.</li>
       <li><strong style="color: var(--text);">Firebase (Google)</strong> — Push notification delivery.</li>
       <li><strong style="color: var(--text);">RevenueCat</strong> — In-app subscription management and purchase verification. RevenueCat processes payment transactions on our behalf; we receive only your subscription status (active/inactive) and do not see or store payment card details. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</li>
       <li><strong style="color: var(--text);">Apple App Store / Google Play</strong> — In-app purchases are processed by Apple or Google depending on your device. Their privacy policies apply to payment processing.</li>
       <li><strong style="color: var(--text);">MapTiler</strong> — Satellite and terrain map tiles.</li>
+      <li><strong style="color: var(--text);">Sentry</strong> — Crash reporting, performance monitoring, and session replay. May include device information, IP address, and on-screen activity recordings (a sample of sessions, and all sessions with a crash). See <a href="https://sentry.io/privacy/" target="_blank">Sentry's Privacy Policy</a>.</li>
     </ul>
 
     <div class="highlight-box">
@@ -273,7 +274,7 @@
 
     <ul>
       <li><strong style="color: var(--text);">Data collected:</strong> Email address, name (optional), location (while in use), photos (with permission), trip/itinerary data, expense records, push notification token, device/app version.</li>
-      <li><strong style="color: var(--text);">Data shared with third parties:</strong> Anonymised location context shared with Anthropic for AI features. Subscription status shared with RevenueCat. Map and location queries sent to Google Maps and HERE. Push tokens delivered via Firebase.</li>
+      <li><strong style="color: var(--text);">Data shared with third parties:</strong> Anonymised location context shared with Anthropic for AI features. Subscription status shared with RevenueCat. Map and location queries sent to MapTiler, HERE, and Google Maps. Push tokens delivered via Firebase. Device information, IP address, and crash/session data shared with Sentry.</li>
       <li><strong style="color: var(--text);">Data encryption:</strong> All data is encrypted in transit (HTTPS/TLS). Vault documents are encrypted at rest.</li>
       <li><strong style="color: var(--text);">Data deletion:</strong> Users can request deletion of all data via in-app account deletion or by contacting support.</li>
       <li><strong style="color: var(--text);">Location:</strong> Approximate location used while app is in use only. Not collected in the background.</li>
