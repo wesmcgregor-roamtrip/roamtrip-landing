@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Data Storage Policy — RoamTrip</title><style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000814;
+      --surface: #0d1b2a;
+      --green: #2D6A4F;
+      --green-light: #40916C;
+      --orange: #E07B39;
+      --text: #F0F4F8;
+      --muted: #8A9BB0;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span { color: var(--orange); }
+
+    .nav-back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--text); }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .effective-date {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--green-light);
+    }
+
+    a { color: var(--green-light); }
+    a:hover { color: var(--text); }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green-light);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style></head><body><nav><a href="/">RoamTrip</a></nav><main class="container"><h1>Data Storage Policy</h1>
+<p>Review draft: 16 October 2026. Do not publish until production regions, backup retention, processor retention and deletion operations are verified and this draft is approved.</p>
+<h2>Where information is stored</h2>
+<p>Account/profile records, trips, expenses, journal entries and collaboration records use Supabase. Uploaded media and documents use cloud storage. The vault also offers a device-only option: its files are copied to the app document directory, with metadata in SecureStore. RoamTrip does not upload those files through that option. Device operating-system backups and exports can make additional copies; device-only does not mean end-to-end encrypted or excluded from every backup.</p>
+<p>The vault uses biometric/PIN access gates and signed URLs for cloud document access. The app does not receive biometric templates. Cloud bucket access policies, encryption at rest and hosting regions must be verified for the deployed environment before security claims are finalised. Session credentials use SecureStore; some profile, itinerary and offline caches use AsyncStorage. These are distinct storage mechanisms.</p>
+<h2>Retention and deletion</h2>
+<p>Account and trip data is retained to provide the service until deleted or an account-deletion request is fulfilled. There is no verified blanket 90-day automatic vault expiry. Individual cloud-file deletion removes the file before its metadata, so a failed file removal can be retried.</p>
+<p>Request account deletion in Profile → Delete account. The account is disabled immediately and automatic deletion starts in the background. The app records a receipt and request date; requests are completed as soon as the automated process succeeds and within 30 days at the latest. If you own a shared trip, ownership transfers to another member so their content and access are preserved.</p>
+<p>The app removes its device-only Vault directory and local metadata on the phone used to request deletion. RoamTrip cannot remotely erase copies on other offline devices, exported copies or device/cloud backups controlled by the user. Any retained records must have a documented lawful purpose and limited retention period. Do not assume that every subscription record requires seven years of retention. Backup and vendor deletion schedules require confirmation before publication; do not promise immediate erasure from every system.</p>
+<p>Account deletion does not cancel an Apple/Google subscription. Cancel separately in the purchasing store. For requests without the app, use <a href="https://roamtrip.mobile/delete-account.html">https://roamtrip.mobile/delete-account.html</a> or support@roamtrip.mobile. Do not email passport scans or passwords.</p></main><footer><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="data-storage.html">Data storage</a> · <a href="cookies.html">Cookies and tracking</a> · <a href="refunds.html">Refunds</a> · <a href="delete-account.html">Account deletion</a></footer></body></html>
