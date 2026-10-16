@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Cookies and Tracking — RoamTrip</title><style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000814;
+      --surface: #0d1b2a;
+      --green: #2D6A4F;
+      --green-light: #40916C;
+      --orange: #E07B39;
+      --text: #F0F4F8;
+      --muted: #8A9BB0;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span { color: var(--orange); }
+
+    .nav-back {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--text); }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .effective-date {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      margin-top: 48px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--green-light);
+    }
+
+    a { color: var(--green-light); }
+    a:hover { color: var(--text); }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green-light);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style></head><body><nav><a href="/">RoamTrip</a></nav><main class="container"><h1>Cookies and Tracking</h1>
+<p>Review draft: 16 October 2026. Validate the released app and deployed website before publication.</p>
+<h2>Mobile app</h2>
+<p>RoamTrip uses local app storage for sign-in sessions, preferences and offline data. Native SDKs can process data without using browser cookies. Supabase supports accounts and stored content; RevenueCat manages subscriptions using an app user identifier. Map, weather and other feature providers receive the information necessary for their requests.</p>
+<p>In the revised app, Sentry session replay, automatic logs and performance tracing are disabled. Crash reporting may still send diagnostic and device information. User, request, extra and breadcrumb fields are removed before error events are sent, but this is not a guarantee of anonymous data: error messages, stack traces and infrastructure logs need runtime review. Older installed versions may use the previous replay configuration until updated.</p>
+<p>No advertising SDK or cross-app advertising use was identified in the reviewed dependency/configuration sample. Do not treat that code review as proof of every deployed SDK&#x27;s behaviour. A verified data inventory is required for final tracking and store declarations.</p>
+<h2>Website</h2>
+<p>The reviewed landing-page script handles animation and scrolling; it does not set analytics cookies. The page loads Google Fonts, which sends network requests to Google. Hosting providers may keep access logs. Signed-in Scout/admin services are separate surfaces whose cookies and storage must be inventoried before this policy is presented as covering them. A blanket claim that RoamTrip never uses cookies or individually identifiable data is inappropriate.</p>
+<h2>Choices and contact</h2>
+<p>Use device permissions to manage location, photos/camera and notifications; revoke permissions in device settings. Manage browser cookies/storage in the browser. Some features need these permissions or storage to work. Contact support@roamtrip.mobile for privacy questions.</p></main><footer><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="data-storage.html">Data storage</a> · <a href="cookies.html">Cookies and tracking</a> · <a href="refunds.html">Refunds</a> · <a href="delete-account.html">Account deletion</a></footer></body></html>
